@@ -229,7 +229,7 @@ function updateBees() { // update loop for game
 
 }
 function isHit(defender, offender) {
-    if (y==true){
+    if (x==true){
     if (overlap(defender, offender)) { //check if the two image overlap
         let score = hits.innerHTML;
         score = Number(score) + 1; //increment the score
