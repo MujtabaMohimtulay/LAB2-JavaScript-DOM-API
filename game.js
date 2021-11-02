@@ -3,9 +3,11 @@ function start() {
     duration.innerHTML=0;
     periodTimer.innerHTML=0;
     lastStingTime=null;
-    speedBear.innerHTML=100;
-    speedBees.innerHTML=50;
-    periodTimer.innerHTML=10;
+    speedBear.value=100;
+    speedBees.value=50;
+    periodTimer.value=10;
+    nbBees.value=1;
+    x=false;
    
     //create bear
     bear = new Bear();
@@ -81,6 +83,7 @@ function setSpeed(){
 // Handle keyboad events 
 // to move the bear
 function moveBear(e) {
+    x=true;
     //codes of the four keys
     const KEYUP = 38;
     const KEYDOWN = 40;
@@ -229,6 +232,7 @@ function isHit(defender, offender) {
         score = Number(score) + 1; //increment the score
         hits.innerHTML = score; //display the new score
         //calculate longest duration
+        if (x==true){
         let newStingTime = new Date();
         let thisDuration = newStingTime - lastStingTime;
         lastStingTime = newStingTime;
@@ -239,6 +243,7 @@ function isHit(defender, offender) {
             if (longestDuration < thisDuration) longestDuration = thisDuration;
         }
         document.getElementById("duration").innerHTML = longestDuration;
+    }
     }
 }
 function overlap(element1, element2) {
