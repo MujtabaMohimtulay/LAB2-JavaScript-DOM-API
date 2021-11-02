@@ -15,6 +15,7 @@ function start() {
     document.addEventListener("keydown", moveBear, false);
     document.getElementById("speedBear").addEventListener("change",setSpeed,false);
     document.addEventListener("keydown", updateBees, false);
+
     //create new array for bees
     bees = new Array();
     if (bees.length>1){
@@ -228,6 +229,7 @@ function updateBees() { // update loop for game
 
 }
 function isHit(defender, offender) {
+    if (y==true){
     if (overlap(defender, offender)) { //check if the two image overlap
         let score = hits.innerHTML;
         score = Number(score) + 1; //increment the score
@@ -246,6 +248,7 @@ function isHit(defender, offender) {
         document.getElementById("duration").innerHTML = longestDuration;
     }
     }
+}
 }
 function overlap(element1, element2) {
     //consider the two rectangles wrapping the two elements
