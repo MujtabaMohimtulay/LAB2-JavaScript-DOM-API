@@ -219,6 +219,7 @@ function updateBees() { // update loop for game
     if(score>=1000){
         clearTimeout(updateBees);
         window.alert("game over");
+        reset();
     }
     else{
     //update the timer for the next move
